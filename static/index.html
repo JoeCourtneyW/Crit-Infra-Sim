@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Raspberri Pi Control Page</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+
+<button id="orangeButton">Pump 1 Toggle</button>
+<button id="brownButton">Pump 2 Toggle</button>
+<button id="yellowButton">Pump 3 Toggle</button>
+<script>
+$('#orangeButton').click(function () {
+$.ajax({type: 'POST', url: '/relay?color=orange'});
+});
+$('#yellowButton').click(function () {
+$.ajax({type: 'POST', url: '/relay?color=yellow'});
+});
+$('#brownButton').click(function () {
+$.ajax({type: 'POST', url: '/relay?color=brown'});
+});
+</script>
+</body>
+</html>
